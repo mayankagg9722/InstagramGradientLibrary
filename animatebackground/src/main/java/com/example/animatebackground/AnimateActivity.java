@@ -47,9 +47,8 @@ public class AnimateActivity extends LinearLayout {
     }
 
     public void setColor(int color) {
-
         this.backgroundColor = color;
-        setGradientAnimation(v, backgroundColor,0);
+        setGradientAnimation(v, backgroundColor,DEFAULT_TIME_INTERVALgit );
     }
 
     public void setTimeInterval(int timeInterval){
@@ -75,7 +74,7 @@ public class AnimateActivity extends LinearLayout {
 
         backgroundColor = styledAttributes.getColor(R.styleable.AnimateActivity_LayoutColor, DEFAULT_COLOR);
 
-        setGradientAnimation(v, backgroundColor,0);
+        setGradientAnimation(v, backgroundColor,DEFAULT_TIME_INTERVAL);
 
     }
 
