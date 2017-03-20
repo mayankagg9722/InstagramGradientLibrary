@@ -19,7 +19,8 @@ import android.widget.LinearLayout;
 
 public class AnimateActivity extends LinearLayout {
 
-    private static final int DEFAULT_COLOR = Color.RED;
+    private static final int DEFAULT_COLOR = Color.parseColor("#f754e1");
+    private static final int DEFAULT_TIME_INTERVAL = 3000;
     private int backgroundColor = 0;
     private Boolean flag = true;
     private Handler hand = new Handler();
@@ -41,10 +42,22 @@ public class AnimateActivity extends LinearLayout {
         void setColor(int color);
     }
 
+    public interface setTimeInterval {
+        void setTimeInterval(int timeInterval);
+    }
+
     public void setColor(int color) {
 
         this.backgroundColor = color;
-        setGradientAnimation(v, backgroundColor);
+        setGradientAnimation(v, backgroundColor,0);
+    }
+
+    public void setTimeInterval(int timeInterval){
+        if(timeInterval==0){
+            setGradientAnimation(v, backgroundColor,DEFAULT_TIME_INTERVAL);
+        }else{
+            setGradientAnimation(v, backgroundColor,timeInterval);
+        }
     }
 
     public void init(Context context, AttributeSet attrs) {
@@ -62,12 +75,12 @@ public class AnimateActivity extends LinearLayout {
 
         backgroundColor = styledAttributes.getColor(R.styleable.AnimateActivity_LayoutColor, DEFAULT_COLOR);
 
-        setGradientAnimation(v, backgroundColor);
+        setGradientAnimation(v, backgroundColor,0);
 
     }
 
 
-    private void setGradientAnimation(View v, int backgroundColor) {
+    private void setGradientAnimation(View v, int backgroundColor,int timeInterval) {
         int dark = manipulateColor(backgroundColor, 0.4f);
         int dark1 = manipulateColor(backgroundColor, 0.6f);
         int dark2=  manipulateColor(backgroundColor, 0.8f);
@@ -79,24 +92,24 @@ public class AnimateActivity extends LinearLayout {
           new ColorDrawable(backgroundColor), new ColorDrawable(dark2),new ColorDrawable(dark1),new ColorDrawable(dark)};
         TransitionDrawable trans = new TransitionDrawable(color);
         v.setBackground(trans);
-        trans.startTransition(3000);
-        repeatTransition(trans);
+        trans.startTransition(timeInterval);
+        repeatTransition(trans,timeInterval);
     }
 
-    void repeatTransition(final TransitionDrawable trans) {
+    void repeatTransition(final TransitionDrawable trans, final int timeInterval) {
         r = new Runnable() {
             @Override
             public void run() {
                 if (flag) {
 //                    Log.d("tagg", "straight");
-                    trans.startTransition(3000);
+                    trans.startTransition(timeInterval);
                     flag = false;
                 } else {
 //                    Log.d("tagg", "reverse");
-                    trans.reverseTransition(3000);
+                    trans.reverseTransition(timeInterval);
                     flag = true;
                 }
-                hand.postDelayed(this, 6000);
+                hand.postDelayed(this, (2*timeInterval));
             }
         };
         hand.post(r);
