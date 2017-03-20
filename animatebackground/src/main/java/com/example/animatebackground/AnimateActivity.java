@@ -48,7 +48,7 @@ public class AnimateActivity extends LinearLayout {
 
     public void setColor(int color) {
         this.backgroundColor = color;
-        setGradientAnimation(v, backgroundColor,DEFAULT_TIME_INTERVALgit );
+        setGradientAnimation(v, backgroundColor,DEFAULT_TIME_INTERVAL);
     }
 
     public void setTimeInterval(int timeInterval){
