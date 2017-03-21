@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ((com.example.animatebackground.AnimateActivity)findViewById(R.id.mylayout)).setColor(Color.parseColor("#f754e1"));
+        ((com.example.animatebackground.AnimateActivity)findViewById(R.id.mylayout)).setColor(Color.parseColor("#8057e1"));
     }
 
 }
