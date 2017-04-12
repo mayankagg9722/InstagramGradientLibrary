@@ -20,6 +20,22 @@ Add the dependency:
 	dependencies {
 	        compile 'com.github.mayankagg9722:InstagramGradientLibrary:-SNAPSHOT'
 	}
+	
+Usage:
+
+	XML:
+	
+	<com.example.animatebackground.AnimateActivity
+        xmlns:custom="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        custom:LayoutColor="#fff"
+        android:id="@+id/mylayout"
+        />
+	
+	Java:
+
+	((com.example.animatebackground.AnimateActivity)findViewById(R.id.mylayout)).setColor(Color.parseColor("#8057e1"));
   
   License:
                                                        
