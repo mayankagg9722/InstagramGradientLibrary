@@ -1,6 +1,5 @@
 # InstagramGradientLibrary
 [![Release](https://jitpack.io/v/jitpack/maven-simple.svg?style=flat-square)](https://jitpack.io/#jitpack/maven-simple)
-[![](https://jitpack.io/v/mayankagg9722/InstagramGradientLibrary.svg)](https://jitpack.io/#mayankagg9722/InstagramGradientLibrary)
 This Android library gives a transition of gradient of shades of given color in background of a layout. Just like an Instagram Background.
 
 ![alt tag](https://github.com/mayankagg9722/InstagramGradientLibrary/blob/master/InstaGradient.gif)  
