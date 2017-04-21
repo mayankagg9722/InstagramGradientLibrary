@@ -18,7 +18,7 @@ Add it in your root build.gradle at the end of repositories:
 Add the dependency:
 	
 	dependencies {
-	        compile 'com.github.mayankagg9722:InstagramGradientLibrary:-SNAPSHOT'
+	        compile 'com.github.mayankagg9722:InstagramGradientLibrary'
 	}
 	
 Usage:
